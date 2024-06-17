@@ -1,0 +1,15 @@
+.THIS.my-custom-component {
+    background-color: yellow;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.THIS .my-custom-message {
+    font-weight: bold;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}

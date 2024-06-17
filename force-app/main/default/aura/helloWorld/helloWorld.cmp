@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes"
+                access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.whom}" action="{!c.handleChangeWhom}"/>
+    
+    <aura:attribute name="whom" type="string" default="World"/>
+    
+    <div class="my-custom-component">
+        <input value="{!v.whom}" onchange="{!c.handleChangeInput}"/>
+        <div class="my-custom-message">
+            Hello, {!v.whom}
+        </div>
+        <button type="button" class="slds-button slds-button_brand" onclick="{!c.handleClickButton}">Say Hi!!!</button>
+    </div>
+    
+</aura:component>
