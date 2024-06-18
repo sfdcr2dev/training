@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "186d2e13-d28c-4bdf-8d26-5be7cdda717c",
+		"name": "TNP Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30805364"
+	},
+	"item": [
+		{
+			"name": "Get Credit Information",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic U0FQX1NGOlNhbGVmb3JjZSMx",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Creditinfo\": {\r\n        \"salesorganization\": \"1201\",\r\n        \"Channel\": \"15\",\r\n        \"soldtonumber\": \"11006817\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://po.thainakorn.com:5000/RESTAdapter/CREDIT_INFORMATION/600",
+					"protocol": "https",
+					"host": [
+						"po",
+						"thainakorn",
+						"com"
+					],
+					"port": "5000",
+					"path": [
+						"RESTAdapter",
+						"CREDIT_INFORMATION",
+						"600"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Access Token (UAT) Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://login.salesforce.com/services/oauth2/token?client_id=3MVG9fe4g9fhX0E49HWRv8hYVnUcmP4nWfEo0nUVL7Z9zfi7opFv.hslRcExoAtIywTERNiXSleI.PZUMO04d&client_secret=A497D77CEC3FD1B1CBA87774B586F34B761ED24E4D689085B8FF6121059E8FF7&grant_type=password&username=m7o9ke@wise-panda-blxeuq.com&password=steelpony487s3NB9wCBJcLwDShhZmAEXz5U",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "3MVG9fe4g9fhX0E49HWRv8hYVnUcmP4nWfEo0nUVL7Z9zfi7opFv.hslRcExoAtIywTERNiXSleI.PZUMO04d"
+						},
+						{
+							"key": "client_secret",
+							"value": "A497D77CEC3FD1B1CBA87774B586F34B761ED24E4D689085B8FF6121059E8FF7"
+						},
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "username",
+							"value": "m7o9ke@wise-panda-blxeuq.com"
+						},
+						{
+							"key": "password",
+							"value": "steelpony487s3NB9wCBJcLwDShhZmAEXz5U"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Case",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "00D5g000001HaVb!AQMAQDANniPkOw4iVvbHxcpXKd5LSwzasZWtVdA9P1OxsRrf1BxLgH5sHR0DBQoYpWJPp81azK3kBRLQ7Qf6L3Sx76IIHwd1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"subject\" : \"Bigfoot Sighting!\",\r\n  \"status\" : \"New\",\r\n  \"origin\" : \"Phone\",\r\n  \"priority\" : \"Low\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wise-panda-blxeuq-dev-ed.my.salesforce.com/services/apexrest/Case",
+					"protocol": "https",
+					"host": [
+						"wise-panda-blxeuq-dev-ed",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"apexrest",
+						"Case"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
